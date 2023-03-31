@@ -1,22 +1,18 @@
 public class Main {
     public static void main(String[] args) {
-        // Cria ingressos
-        Ingresso ingresso = new Ingresso(30.0);
-        IngressoVIP ingressoVIP = new IngressoVIP(50.0, 20.0);
+        Ingresso ingressoNormal = new Ingresso(50.0);
+        IngressoVIP ingressoVip = new IngressoVIP(50.0, 30.0);
 
-        // Cria eventos
-        Evento show = new Show("Tour Coldplay Brasil", "Engenhao", 1000, ingresso, "Coldplay", ingressoVIP);
-        Evento filme = new Filme("Homem de Ferro", "Cinema", 200, ingresso, "Cinepolis", "Sala 1", "Ação");
-        Evento teatro = new Teatro("Mama Mia", "Villaje mall", 500, ingresso);
+        Evento eventoNormal = new Filme("Homem de ferro", "Barra Shopping", 100, ingressoNormal, "Cinemark", "Sala 1", "Ação");
+        Evento eventoVip = new Show("Tour Coldplay", "Engenhao", 500, ingressoNormal, "Coldplay", ingressoVip);
 
-        // Print eventos
-        System.out.println(show.getNome());
-        System.out.println("Receita total do show - " + show.calcularReceita());
+        System.out.println("Evento normal - " + eventoNormal.getNome() + "- " + eventoNormal.calcularReceita() + " reais");
+        System.out.println("Evento VIP - " + eventoVip.getNome() + "- " + eventoVip.calcularReceita() + " reais");
 
-        System.out.println(filme.getNome());
-        System.out.println("Receita total do filme - " + filme.calcularReceita());
+        double valorIngressoNormal = ingressoNormal.efetuarPagamento();
+        double valorIngressoVip = ingressoVip.efetuarPagamento();
 
-        System.out.println(teatro.getNome());
-        System.out.println("Receita total do teatro - " + teatro.calcularReceita());
+        System.out.println("Valor do ingresso normal com desconto de impostos - " + valorIngressoNormal);
+        System.out.println("Valor do ingresso VIP com desconto de impostos - " + valorIngressoVip);
     }
 }

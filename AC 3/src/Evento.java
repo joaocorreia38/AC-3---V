@@ -11,11 +11,39 @@ public abstract class Evento {
         this.ingresso = ingresso;
     }
 
-    public String getNome() {
+     String getNome() {
         return nome;
     }
 
-    public double calcularReceita() {
+     void setNome(String nome) {
+        this.nome = nome;
+    }
+
+     String getLocal() {
+        return local;
+    }
+
+     void setLocal(String local) {
+        this.local = local;
+    }
+
+     int getCapacidade() {
+        return capacidade;
+    }
+
+     void setCapacidade(int capacidade) {
+        this.capacidade = capacidade;
+    }
+
+     Ingresso getIngresso() {
+        return ingresso;
+    }
+
+     void setIngresso(Ingresso ingresso) {
+        this.ingresso = ingresso;
+    }
+
+     double calcularReceita() {
         return capacidade * ingresso.calcularValor();
     }
 }

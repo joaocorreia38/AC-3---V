@@ -7,4 +7,10 @@ public class Show extends Evento {
         this.artista = artista;
         this.ingressoVip = ingressoVip;
     }
+
+    public double calcularReceitaVIP() {
+        return capacidade * ingressoVip.calcularValor();
+    }
+
+    // getters e setters
 }
